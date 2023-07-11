@@ -6,7 +6,32 @@
 
     {% if user.is_authenticated %}
     
-        <h1>Hello World</h1>
+        <h1>Records</h1>
+
+        {% if records %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+            {% for record in records %}
+
+                    <tr>
+                        <td><a href="{% url 'record' record.id %}">{{record.id}}</a></td>
+                        <td>{{record.first_name}} {{record.last_name}}</td>
+                        <td>{{record.phone_number}}</td>
+                        <td>{{record.email}}</td>
+                    </tr>
+                    
+            {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
     
     {% else %}
 
@@ -25,6 +50,6 @@
         </form>
 
     {% endif %}
-    
+
 </div>
 {% endblock content %}
