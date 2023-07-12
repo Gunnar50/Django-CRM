@@ -8,13 +8,13 @@
     </div>
 
     <div class="card-body">
-      <strong>Name:</strong><p class="card-text">{{customer_record.first_name}} {{customer_record.last_name}}</p>
-      <strong>Phone:</strong><p class="card-text">{{customer_record.phone_number}}</p>
-      <strong>Email:</strong><p class="card-text">{{customer_record.email}}</p>
+        <strong>Name:</strong><p class="card-text">{{customer_record.first_name}} {{customer_record.last_name}}</p>
+        <strong>Phone:</strong><p class="card-text">{{customer_record.phone_number}}</p>
+        <strong>Email:</strong><p class="card-text">{{customer_record.email}}</p>
       
       
       
-        <a href="#" class="btn btn-primary">Update</a>
+        <a href="{% url 'update' customer_record.id %}" class="btn btn-primary">Update</a>
         <a href="{% url 'delete' customer_record.id %}" class="btn btn-danger">Delete</a>
     </div>
 </div>
